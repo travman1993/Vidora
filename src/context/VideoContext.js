@@ -1,6 +1,6 @@
 // src/context/VideoContext.js
 import React, { createContext, useState } from 'react';
-import * as api from '../utils/api';
+import * as api from '../../utils/api'; // Corrected import path
 
 // Create the video context
 export const VideoContext = createContext();

@@ -1,7 +1,7 @@
 // src/pages/_app.js
 import React from 'react';
-import { AuthProvider } from '../context/AuthContext';
-import { VideoProvider } from '../context/VideoContext';
+import { AuthProvider } from '../../context/AuthContext';
+import { VideoProvider } from '../../context/VideoContext';
 
 // Import styles
 import '../../styles/global.css';
