@@ -7,24 +7,13 @@ import { AuthContext } from '../context/AuthContext';
  * Provides access to authentication state and methods from the AuthContext
  */
 export const useAuth = () => {
-  // For now, return a mock implementation since we haven't set up the full AuthContext yet
-  return {
-    user: null,
-    loading: false,
-    error: null,
-    login: async () => {
-      console.log('Mock login called');
-      return { success: true };
-    },
-    signup: async () => {
-      console.log('Mock signup called');
-      return { success: true };
-    },
-    logout: async () => {
-      console.log('Mock logout called');
-    },
-    isAuthenticated: false
-  };
+  const auth = useContext(AuthContext);
+  
+  if (auth === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  
+  return auth;
 };
 
 export default useAuth;
