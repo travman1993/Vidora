@@ -1,206 +1,180 @@
-/* themes.css - Dark & light mode styles */
+/* Modern Dark Mode Theme */
 
-/* Light Theme (Default) */
 :root {
-    /* Color palette */
-    --primary: #3366ff;
-    --primary-dark: #2952cc;
-    --primary-light: #668fff;
-    --secondary: #ff6633;
-    --secondary-dark: #cc5229;
-    --secondary-light: #ff8566;
-    
-    /* Neutral colors */
-    --black: #121212;
-    --dark-gray: #2e2e2e;
-    --medium-gray: #6e6e6e;
-    --light-gray: #e0e0e0;
-    --off-white: #f8f8f8;
-    --white: #ffffff;
-    
-    /* Functional colors */
-    --success: #28a745;
-    --warning: #ffc107;
-    --error: #dc3545;
-    --info: #17a2b8;
-    
-    /* Background colors */
-    --bg-primary: var(--white);
-    --bg-secondary: var(--off-white);
-    --bg-tertiary: var(--light-gray);
-    
-    /* Text colors */
-    --text-primary: var(--black);
-    --text-secondary: var(--dark-gray);
-    --text-muted: var(--medium-gray);
-    
-    /* Border colors */
-    --border-color: var(--light-gray);
-    
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
+  /* Base Colors */
+  --color-background-primary: #141414;
+  --color-background-secondary: #1e1e1e;
+  --color-background-hover: #2c2c2c;
   
-  /* Dark Theme */
-  .dark-mode {
-    /* Color palette - unchanged */
-    --primary: #3366ff;
-    --primary-dark: #2952cc;
-    --primary-light: #668fff;
-    --secondary: #ff6633;
-    --secondary-dark: #cc5229;
-    --secondary-light: #ff8566;
-    
-    /* Neutral colors - unchanged */
-    --black: #121212;
-    --dark-gray: #2e2e2e;
-    --medium-gray: #6e6e6e;
-    --light-gray: #e0e0e0;
-    --off-white: #f8f8f8;
-    --white: #ffffff;
-    
-    /* Functional colors - unchanged */
-    --success: #28a745;
-    --warning: #ffc107;
-    --error: #dc3545;
-    --info: #17a2b8;
-    
-    /* Background colors - inverted */
-    --bg-primary: var(--black);
-    --bg-secondary: var(--dark-gray);
-    --bg-tertiary: #3e3e3e;
-    
-    /* Text colors - inverted */
-    --text-primary: var(--white);
-    --text-secondary: var(--off-white);
-    --text-muted: #a0a0a0;
-    
-    /* Border colors - adjusted */
-    --border-color: #3e3e3e;
-    
-    /* Shadows - adjusted for dark mode */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
-  }
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-text-muted: #808080;
   
-  /* Dark mode specific component overrides */
-  .dark-mode body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-  }
+  /* Accent Colors */
+  --color-accent-primary: #e50914; /* Netflix Red */
+  --color-accent-secondary: #3366ff;
   
-  .dark-mode .navbar {
-    background-color: var(--bg-secondary);
-    box-shadow: var(--shadow-md);
-  }
+  /* Border & Divider */
+  --color-border: #404040;
   
-  .dark-mode .card,
-  .dark-mode .video-card,
-  .dark-mode .profile-card,
-  .dark-mode .leaderboard-container,
-  .dark-mode .film-of-year-container,
-  .dark-mode .student-award-container,
-  .dark-mode .upload-form-container,
-  .dark-mode .video-stats-card,
-  .dark-mode .engagement-graph,
-  .dark-mode .share-count-widget,
-  .dark-mode .auth-form-container {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
+  /* Shadows */
+  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+}
+
+/* Navigation */
+.navbar {
+  background-color: var(--color-background-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-link {
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-text-primary);
+}
+
+/* Cards & Containers */
+.video-card, 
+.profile-card, 
+.leaderboard-container, 
+.dashboard-section {
+  background-color: var(--color-background-secondary);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Form Elements */
+input, 
+select, 
+textarea {
+  background-color: var(--color-background-hover);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+.btn-secondary {
+  background-color: var(--color-background-hover);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-border);
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--color-background-secondary);
+  border-right: 1px solid var(--color-border);
+}
+
+.sidebar-nav a {
+  color: var(--color-text-secondary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background-color: var(--color-background-hover);
+  color: var(--color-text-primary);
+}
+
+/* Specific UI Components */
+.video-thumbnail {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.video-thumbnail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-thumbnail:hover::before {
+  opacity: 1;
+}
+
+/* Hover Effects */
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Modal & Overlay */
+.modal {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: var(--color-background-secondary);
+  border-radius: 8px;
+  box-shadow: var(--shadow-medium);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse-hover:hover {
+  animation: pulse 1s infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar, .sidebar {
+    background-color: var(--color-background-primary);
   }
-  
-  .dark-mode .sidebar {
-    background-color: var(--bg-secondary);
-    border-right: 1px solid var(--border-color);
-  }
-  
-  .dark-mode .sidebar-nav a {
-    color: var(--text-secondary);
-  }
-  
-  .dark-mode .sidebar-nav a:hover,
-  .dark-mode .sidebar-nav a.active {
-    background-color: rgba(51, 102, 255, 0.2);
-  }
-  
-  .dark-mode .sidebar-subscription {
-    background-color: var(--bg-tertiary);
-  }
-  
-  .dark-mode .dashboard-content {
-    background-color: var(--bg-primary);
-  }
-  
-  .dark-mode .stat-item {
-    background-color: var(--bg-tertiary);
-  }
-  
-  .dark-mode .form-section {
-    background-color: var(--bg-tertiary);
-  }
-  
-  .dark-mode input, 
-  .dark-mode select, 
-  .dark-mode textarea {
-    background-color: var(--bg-tertiary);
-    border-color: var(--border-color);
-    color: var(--text-primary);
-  }
-  
-  .dark-mode .duration-filters button,
-  .dark-mode .type-selector button,
-  .dark-mode .timeframe-selector button {
-    background-color: var(--bg-tertiary);
-    border-color: var(--border-color);
-    color: var(--text-secondary);
-  }
-  
-  .dark-mode .duration-filters button.active,
-  .dark-mode .type-selector button.active,
-  .dark-mode .timeframe-selector button.active {
-    background-color: var(--primary);
-    color: var(--white);
-  }
-  
-  .dark-mode .video-upload-area,
-  .dark-mode .thumbnail-upload-area,
-  .dark-mode .trailer-upload-area {
-    background-color: var(--bg-tertiary);
-    border-color: var(--border-color);
-  }
-  
-  .dark-mode .achievement-item,
-  .dark-mode .detail-item {
-    background-color: var(--bg-tertiary);
-  }
-  
-  .dark-mode .winner-content,
-  .dark-mode .student-winner-showcase {
-    background-color: var(--bg-tertiary);
-  }
-  
-  .dark-mode .upload-details {
-    background-color: var(--bg-tertiary);
-  }
-  
-  .dark-mode .progress-bar {
-    background-color: var(--border-color);
-  }
-  
-  .dark-mode .cancel-button {
-    background-color: var(--bg-tertiary);
-    color: var(--text-secondary);
-  }
-  
-  .dark-mode .auth-page {
-    background-color: var(--bg-primary);
-  }
-  
-  .dark-mode .categories-section {
-    background-color: var(--bg-secondary);
-  }
+}
